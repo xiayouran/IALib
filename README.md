@@ -20,6 +20,6 @@
 
 ![ga.gif](imgs/1.ga.gif#pic_center)
 
-- 模拟退火算法(Simulate Anneal Algorithm, SAA) [原理介绍传送门]()
+- 模拟退火算法(Simulate Anneal Algorithm, SAA) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/129523998)
 
 ![saa.gif](imgs/2.saa.gif#pic_center)
