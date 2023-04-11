@@ -5,3 +5,4 @@
 # Filename: __init__.py
 from .genetic_algorithm import *
 from .simulate_anneal_algorithm import *
+from .particle_swarm_optimization import *

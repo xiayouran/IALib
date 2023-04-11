@@ -14,7 +14,7 @@ import IALib
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--algorithm', '-algo', type=str, default='ga', choices=['ga', 'saa'],
+parser.add_argument('--algorithm', '-algo', type=str, default='pso', choices=['ga', 'saa', 'pso'],
                     help='select a algorithm')
 args = parser.parse_args()
 
@@ -27,5 +27,7 @@ if __name__ == '__main__':
         algo.solution()
     elif algo_name == 'saa':
         algo = IALib.SimulateAnnealAlgorithm()
-        algo.draw()
-
+        algo.solution()
+    elif algo_name == 'pso':
+        algo = IALib.ParticleSwarmOptimization()
+        algo.solution()

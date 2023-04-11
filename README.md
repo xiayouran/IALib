@@ -16,10 +16,14 @@
 
 本项目是对书中所介绍算法的Python实现。
 
-- 遗传算法(Genetic Algorithm, GA) [原理介绍传送门](https://blog.csdn.net/qq_42730750/article/details/129444149)
+- 遗传算法(Genetic Algorithm, GA) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/129444149)
 
 ![ga.gif](imgs/1.ga.gif#pic_center)
 
 - 模拟退火算法(Simulate Anneal Algorithm, SAA) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/129523998)
 
 ![saa.gif](imgs/2.saa.gif#pic_center)
+
+- 粒子群优化算法(ParticleSwarm Optimization, PSO) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/129619922)
+
+![pso.gif](imgs/3.pso.gif#pic_center)
