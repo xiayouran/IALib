@@ -29,6 +29,7 @@ class GeneticAlgorithm(BaseAlgorithm):
         self.__max_generations = max_generations    # maximum iterations
         self.__x_range = x_range                    # x upper and lower bounds
         self.__seed = seed                          # random seed
+        self.optimal_solution = None
 
         np.random.seed(self.__seed)
 
@@ -73,10 +74,12 @@ class GeneticAlgorithm(BaseAlgorithm):
             # Step2: compute fitness value
             fitness = self.__get_fitness(f_values)
             best_id = np.argmax(fitness)
-            print("Most fitted DNA: {}, x: {}, max_value: {}".format(population[best_id],
-                                                                     self.__translateDNA(population[best_id]),
-                                                                     self.problem_function(
-                                                                         self.__translateDNA(population[best_id]))))
+            self.optimal_solution = (self.parse_format(self.__translateDNA(population[best_id])),
+                                     self.parse_format(self.problem_function(self.__translateDNA(population[best_id]))))
+            # print("Most fitted DNA: {}, x: {}, max_value: {}".format(population[best_id],
+            #                                                          self.__translateDNA(population[best_id]),
+            #                                                          self.problem_function(
+            #                                                              self.__translateDNA(population[best_id]))))
             # Step3: selection
             population = self.__selection(population, fitness)
             population_copy = population.copy()
@@ -86,6 +89,8 @@ class GeneticAlgorithm(BaseAlgorithm):
                 # Step5: mutation
                 child = self.__mutation(child)
                 parent[:] = child  # parent is replaced by its child
+
+        print('the optimal solution is', self.optimal_solution)
 
     def draw(self):
         # Step1: initialize the population DNA
@@ -108,10 +113,12 @@ class GeneticAlgorithm(BaseAlgorithm):
             # Step2: compute fitness value
             fitness = self.__get_fitness(f_values)
             best_id = np.argmax(fitness)
-            print("Most fitted DNA: {}, x: {}, max_value: {}".format(population[best_id],
-                                                                     self.__translateDNA(population[best_id]),
-                                                                     self.problem_function(
-                                                                         self.__translateDNA(population[best_id]))))
+            self.optimal_solution = (self.parse_format(self.__translateDNA(population[best_id])),
+                                     self.parse_format(self.problem_function(self.__translateDNA(population[best_id]))))
+            # print("Most fitted DNA: {}, x: {}, max_value: {}".format(population[best_id],
+            #                                                          self.__translateDNA(population[best_id]),
+            #                                                          self.problem_function(
+            #                                                              self.__translateDNA(population[best_id]))))
             # Step3: selection
             population = self.__selection(population, fitness)
             population_copy = population.copy()
@@ -122,5 +129,8 @@ class GeneticAlgorithm(BaseAlgorithm):
                 child = self.__mutation(child)
                 parent[:] = child  # parent is replaced by its child
 
+        plt.scatter(self.optimal_solution[0], self.optimal_solution[1], s=100, lw=0, c='green', alpha=0.7)
         plt.ioff()
         plt.show()
+
+        print('the optimal solution is', self.optimal_solution)

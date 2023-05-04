@@ -27,3 +27,15 @@ class BaseAlgorithm(object):
     def draw(self):
         """Visualize the problem solving process"""
         pass
+
+    def parse_format(self, x):
+        """Unified data format"""
+        if isinstance(x, np.ndarray):
+            if x.size == 1:
+                x = x[0]
+            elif x.size == 2:
+                x = x.tolist()
+        else:
+            pass
+
+        return x
