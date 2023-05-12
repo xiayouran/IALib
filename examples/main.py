@@ -14,7 +14,7 @@ import IALib
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--algorithm', '-algo', type=str, default='pso_saa', choices=['ga', 'saa', 'pso', 'pso_saa'],
+parser.add_argument('--algorithm', '-algo', type=str, default='aco', choices=['ga', 'saa', 'pso', 'pso_saa', 'aco'],
                     help='select a algorithm')
 args = parser.parse_args()
 
@@ -33,4 +33,7 @@ if __name__ == '__main__':
         algo.solution()     # draw()
     elif algo_name == 'pso_saa':
         algo = IALib.PSO_SAA()
+        algo.solution()     # draw()
+    elif algo_name == 'aco':
+        algo = IALib.AntColonyOptimization()
         algo.solution()     # draw()

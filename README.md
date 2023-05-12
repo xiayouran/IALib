@@ -27,3 +27,7 @@
 - 粒子群优化算法(ParticleSwarm Optimization, PSO) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/129619922)
 
 ![pso.gif](imgs/3.pso.gif#pic_center)
+
+- 蚁群算法(Ant Colony Optimization, ACO) [原理介绍传送门](https://xiayouran.blog.csdn.net/article/details/130523178)
+
+![aco.gif](imgs/4.aco.gif#pic_center)
